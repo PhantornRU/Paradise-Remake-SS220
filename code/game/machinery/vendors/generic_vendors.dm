@@ -869,12 +869,14 @@
 					/obj/item/fish_eggs/salmon = 5, /obj/item/fish_eggs/catfish = 5, /obj/item/fish_eggs/glofish = 5,
 					/obj/item/fish_eggs/electric_eel = 5, /obj/item/fish_eggs/shrimp = 10, /obj/item/toy/pet_rock = 5,
 					/obj/item/toy/pet_rock/fred = 1, /obj/item/toy/pet_rock/roxie = 1,
+					/obj/item/pet_carrier/normal = 3, /obj/item/pet_carrier = 5,
 					)
 	prices = list(/obj/item/petcollar = 75, /obj/item/storage/firstaid/aquatic_kit/full = 50, /obj/item/fish_eggs/goldfish = 10,
 					/obj/item/fish_eggs/clownfish = 30, /obj/item/fish_eggs/shark = 30, /obj/item/fish_eggs/feederfish = 20,
 					/obj/item/fish_eggs/salmon = 30, /obj/item/fish_eggs/catfish = 30, /obj/item/fish_eggs/glofish = 10,
 					/obj/item/fish_eggs/electric_eel = 30, /obj/item/fish_eggs/shrimp = 10, /obj/item/toy/pet_rock = 50,
 					/obj/item/toy/pet_rock/fred = 75, /obj/item/toy/pet_rock/roxie = 75,
+					/obj/item/pet_carrier/normal = 250, /obj/item/pet_carrier = 100,
 					)
 	contraband = list(/obj/item/fish_eggs/babycarp = 5)
 	refill_canister = /obj/item/vending_refill/crittercare
