@@ -243,12 +243,9 @@
 /area/shuttle/transport)
 "ajI" = (
 /obj/structure/cable{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/machinery/mech_bay_recharge_port/upgraded,
@@ -1513,7 +1510,7 @@
 	},
 /area/centcom/ss220/bar)
 "aZm" = (
-/obj/mecha/working/ripley/mining,
+/obj/mecha/working/ripley/mining/old,
 /obj/effect/turf_decal/stripes/red/box,
 /turf/simulated/floor/plasteel/dark,
 /area/centcom/ss220/supply)
@@ -2207,7 +2204,7 @@
 /obj/item/circuitboard/aiupload,
 /obj/item/circuitboard/circuit_imprinter,
 /obj/item/circuitboard/communications,
-/obj/item/circuitboard/destructive_analyzer,
+/obj/item/circuitboard/scientific_analyzer,
 /obj/item/circuitboard/ore_redemption,
 /obj/item/circuitboard/mining_shuttle,
 /obj/item/circuitboard/protolathe,
@@ -3949,7 +3946,7 @@
 /area/centcom/ss220/admin1)
 "cqz" = (
 /obj/structure/table/glass/reinforced/plastitanium,
-/obj/effect/spawner/random/CCfood/alcohol,
+/obj/effect/spawner/random/ccfood/alcohol,
 /turf/simulated/floor/carpet/royalblack,
 /area/centcom/ss220/bar)
 "cqV" = (
@@ -4035,8 +4032,6 @@
 "cts" = (
 /obj/mecha/combat/marauder/ares/loaded,
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/mineral/plastitanium/red,
@@ -4654,8 +4649,11 @@
 /area/centcom/ss220/admin1)
 "cTP" = (
 /obj/structure/light_fake/small,
+/obj/machinery/bodyscanner{
+	dir = 1
+	},
 /turf/simulated/floor/plasteel{
-	icon_state = "dark"
+	icon_state = "darkblue"
 	},
 /area/centcom/ss220/medbay)
 "cUl" = (
@@ -4926,7 +4924,7 @@
 /area/shuttle/syndicate)
 "dbI" = (
 /obj/structure/table/abductor,
-/obj/effect/spawner/random/CCfood/meat,
+/obj/effect/spawner/random/ccfood/meat,
 /obj/effect/turf_decal/siding/white{
 	dir = 10
 	},
@@ -6188,6 +6186,11 @@
 	icon_state = "darkyellowaltstrip"
 	},
 /area/syndicate_mothership/control)
+"dKi" = (
+/turf/simulated/floor/plasteel{
+	icon_state = "darkblue"
+	},
+/area/centcom/ss220/medbay)
 "dKp" = (
 /obj/structure/statue/cyberiad/s,
 /obj/effect/turf_decal/woodsiding,
@@ -6784,7 +6787,7 @@
 /obj/structure/table/reinforced{
 	color = "#996633"
 	},
-/obj/effect/spawner/random/CCfood/dessert,
+/obj/effect/spawner/random/ccfood/dessert,
 /turf/simulated/floor/plasteel/dark{
 	icon_state = "dark_large"
 	},
@@ -6822,13 +6825,12 @@
 /turf/simulated/floor/transparent/glass/reinforced,
 /area/centcom/ss220/admin2)
 "eig" = (
-/obj/structure/morgue,
-/obj/machinery/door/window/reinforced/normal{
-	name = "Морг";
-	req_access = list(101);
+/obj/structure/crematorium{
+	id = 2
+	},
+/obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/structure/window/reinforced,
 /turf/simulated/floor/plasteel{
 	dir = 9;
 	icon_state = "darkblue"
@@ -6961,7 +6963,7 @@
 /area/syndicate_mothership/jail)
 "emI" = (
 /obj/structure/table/wood/fancy/royalblue,
-/obj/effect/spawner/random/CCfood/alcohol,
+/obj/effect/spawner/random/ccfood/alcohol,
 /turf/simulated/floor/carpet/royalblack,
 /area/centcom/ss220/bar)
 "enl" = (
@@ -8417,8 +8419,8 @@
 /obj/item/storage/box/drinkingglasses,
 /obj/item/storage/box/drinkingglasses,
 /obj/item/storage/box/drinkingglasses,
-/obj/item/reagent_containers/iv_bag/blood/OMinus,
-/obj/item/reagent_containers/iv_bag/blood/OMinus,
+/obj/item/reagent_containers/iv_bag/blood/o_minus,
+/obj/item/reagent_containers/iv_bag/blood/o_minus,
 /obj/structure/light_fake/spot{
 	dir = 1
 	},
@@ -8668,11 +8670,11 @@
 "fhh" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/box,
-/obj/item/CQC_manual,
-/obj/item/CQC_manual,
-/obj/item/CQC_manual,
-/obj/item/CQC_manual,
-/obj/item/CQC_manual,
+/obj/item/cqc_manual,
+/obj/item/cqc_manual,
+/obj/item/cqc_manual,
+/obj/item/cqc_manual,
+/obj/item/cqc_manual,
 /turf/simulated/floor/plasteel/dark,
 /area/centcom/ss220/supply)
 "fhp" = (
@@ -9018,7 +9020,7 @@
 /area/centcom/ss220/admin2)
 "fqN" = (
 /obj/structure/table/glass/reinforced/plastitanium,
-/obj/effect/spawner/random/CCfood/alcohol,
+/obj/effect/spawner/random/ccfood/alcohol,
 /obj/structure/light_fake,
 /obj/structure/sign/poster/official/random/south,
 /turf/simulated/floor/carpet/royalblack,
@@ -9579,7 +9581,7 @@
 /turf/simulated/floor/carpet/black,
 /area/centcom/ss220/admin1)
 "fFs" = (
-/obj/machinery/disposal/deliveryChute,
+/obj/machinery/disposal/delivery_chute,
 /obj/structure/disposalpipe/trunk{
 	dir = 1
 	},
@@ -11344,7 +11346,7 @@
 /area/syndicate_mothership)
 "gPm" = (
 /obj/structure/table/wood/fancy/black,
-/obj/effect/spawner/random/CCfood/dessert,
+/obj/effect/spawner/random/ccfood/dessert,
 /turf/simulated/floor/carpet/black,
 /area/centcom/ss220/bar)
 "gPJ" = (
@@ -11744,9 +11746,8 @@
 /area/centcom/ss220/supply)
 "haI" = (
 /obj/effect/turf_decal/delivery/red,
-/obj/effect/spawner/random_spawners/syndicate/loot{
-	spawn_inside = null
-	},
+/obj/effect/spawner/random/syndicate/loot/common,
+/obj/structure/closet/secure_closet/depot,
 /turf/simulated/floor/plasteel{
 	icon_state = "dark"
 	},
@@ -11860,7 +11861,7 @@
 /area/shuttle/syndicate)
 "hdk" = (
 /obj/structure/table/wood/poker,
-/obj/effect/spawner/random/CCfood/alcohol,
+/obj/effect/spawner/random/ccfood/alcohol,
 /turf/simulated/floor/carpet/green,
 /area/centcom/ss220/bar)
 "hdo" = (
@@ -12324,11 +12325,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/machinery/newscaster/security_unit{
-	dir = 1;
-	name = "south bump";
-	pixel_y = -28
-	},
+/obj/machinery/newscaster/security_unit/directional/south,
 /obj/structure/table/wood/fancy/black,
 /obj/item/clothing/mask/cigarette/cigar,
 /obj/item/clothing/mask/cigarette/cigar{
@@ -14202,7 +14199,7 @@
 /obj/structure/table/wood{
 	color = "#996633"
 	},
-/obj/effect/spawner/random/CCfood/alcohol,
+/obj/effect/spawner/random/ccfood/alcohol,
 /turf/simulated/floor/carpet/lone,
 /area/centcom/ss220/bar)
 "irK" = (
@@ -14334,11 +14331,11 @@
 /area/centcom/ss220/admin3)
 "iuR" = (
 /obj/structure/table,
-/obj/item/reagent_containers/drinks/cans/beer{
+/obj/item/reagent_containers/drinks/bottle/beer{
 	pixel_x = 6;
 	pixel_y = 4
 	},
-/obj/item/reagent_containers/drinks/cans/beer{
+/obj/item/reagent_containers/drinks/bottle/beer{
 	pixel_x = -6;
 	pixel_y = 4
 	},
@@ -15062,7 +15059,7 @@
 	pixel_x = -28;
 	dir = 4
 	},
-/obj/item/reagent_containers/iv_bag/blood/OMinus,
+/obj/item/reagent_containers/iv_bag/blood/o_minus,
 /turf/simulated/floor/mineral/titanium,
 /area/shuttle/syndicate)
 "iRb" = (
@@ -15508,8 +15505,8 @@
 "jhp" = (
 /obj/item/storage/firstaid/brute,
 /obj/item/storage/firstaid/brute,
-/obj/item/storage/firstaid/doctor,
-/obj/item/storage/firstaid/doctor,
+/obj/item/storage/firstaid/regular/doctor,
+/obj/item/storage/firstaid/regular/doctor,
 /obj/item/storage/firstaid/fire,
 /obj/item/storage/firstaid/fire,
 /obj/item/storage/firstaid/o2,
@@ -16721,8 +16718,20 @@
 /turf/simulated/wall/mineral/plastitanium,
 /area/shuttle/syndicate)
 "jWM" = (
-/obj/structure/sign/poster/official/nanotrasen_logo{
-	pixel_y = 32
+/obj/machinery/crema_switch{
+	pixel_y = 32;
+	id = 2
+	},
+/obj/structure/table/reinforced,
+/obj/item/storage/box/bodybags{
+	pixel_y = -7
+	},
+/obj/item/storage/box/gloves{
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/spray/cleaner{
+	pixel_x = 11;
+	pixel_y = 10
 	},
 /turf/simulated/floor/plasteel{
 	dir = 1;
@@ -16870,7 +16879,7 @@
 /area/centcom/ss220/supply)
 "kdg" = (
 /obj/structure/table/abductor,
-/obj/effect/spawner/random/CCfood/dessert,
+/obj/effect/spawner/random/ccfood/dessert,
 /obj/effect/turf_decal/siding/white{
 	dir = 10
 	},
@@ -17845,9 +17854,8 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/delivery/white,
-/obj/effect/spawner/random_spawners/syndicate/loot{
-	spawn_inside = null
-	},
+/obj/effect/spawner/random/syndicate/loot/common,
+/obj/structure/closet/secure_closet/depot,
 /turf/simulated/floor/plasteel{
 	icon_state = "dark"
 	},
@@ -18197,7 +18205,7 @@
 /area/centcom/ss220/evac)
 "kMD" = (
 /obj/structure/table/abductor,
-/obj/effect/spawner/random/CCfood/meat,
+/obj/effect/spawner/random/ccfood/meat,
 /obj/effect/turf_decal/siding/white{
 	dir = 9
 	},
@@ -18338,7 +18346,7 @@
 	},
 /obj/structure/table/wood/fancy/purple,
 /obj/structure/sign/poster/official/random/north,
-/obj/effect/spawner/random/CCfood/alcohol,
+/obj/effect/spawner/random/ccfood/alcohol,
 /turf/simulated/floor/plasteel/dark,
 /area/centcom/ss220/bar)
 "kRo" = (
@@ -19656,10 +19664,7 @@
 /turf/simulated/floor/indestructible/grass,
 /area/syndicate_mothership/outside)
 "lCD" = (
-/mob/living/simple_animal/mouse/brown{
-	desc = "Секретная разработка синдиката. Сидит тут потому, что сам хочет";
-	name = "Мышедемон"
-	},
+/mob/living/simple_animal/mouse/brown/demon,
 /turf/simulated/floor/plasteel{
 	icon_state = "dark"
 	},
@@ -19813,7 +19818,7 @@
 /area/centcom/ss220/admin3)
 "lKj" = (
 /obj/structure/table,
-/obj/item/storage/firstaid,
+/obj/item/storage/firstaid/regular,
 /obj/effect/turf_decal/delivery/hollow,
 /turf/simulated/floor/plasteel{
 	icon_state = "bot"
@@ -19848,9 +19853,8 @@
 /area/syndicate_mothership)
 "lKt" = (
 /obj/effect/turf_decal/delivery,
-/obj/effect/spawner/random_spawners/syndicate/loot{
-	spawn_inside = null
-	},
+/obj/effect/spawner/random/syndicate/loot/common,
+/obj/structure/closet/secure_closet/depot,
 /turf/simulated/floor/plasteel{
 	dir = 1;
 	icon_state = "dark"
@@ -20090,7 +20094,6 @@
 /area/syndicate_mothership/control)
 "lPU" = (
 /obj/structure/closet/secure_closet/personal/cabinet{
-	req_access = list(114);
 	req_access = null
 	},
 /obj/item/clothing/head/towel/orange,
@@ -20421,11 +20424,19 @@
 /turf/simulated/floor/indestructible/grass/no_creep,
 /area/centcom/ss220/general)
 "maQ" = (
-/obj/machinery/crema_switch{
-	pixel_y = -32
+/obj/structure/morgue{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/machinery/door/window/reinforced/normal{
+	name = "Морг";
+	req_access = list(101);
+	dir = 1
 	},
 /turf/simulated/floor/plasteel{
-	icon_state = "dark"
+	icon_state = "darkblue"
 	},
 /area/centcom/ss220/medbay)
 "maY" = (
@@ -20699,9 +20710,8 @@
 /obj/structure/light_fake/spot{
 	dir = 1
 	},
-/obj/effect/spawner/random_spawners/syndicate/loot{
-	spawn_inside = null
-	},
+/obj/effect/spawner/random/syndicate/loot/common,
+/obj/structure/closet/secure_closet/depot,
 /turf/simulated/floor/plasteel{
 	icon_state = "darkyellowalt"
 	},
@@ -21762,7 +21772,7 @@
 /turf/simulated/floor/wood/fancy/cherry,
 /area/centcom/ss220/admin2)
 "mVX" = (
-/obj/machinery/disposal/deliveryChute{
+/obj/machinery/disposal/delivery_chute{
 	dir = 1
 	},
 /obj/structure/disposalpipe/trunk,
@@ -21781,23 +21791,23 @@
 /area/centcom/ss220/supply)
 "mWo" = (
 /obj/structure/table/glass,
-/obj/item/reagent_containers/drinks/cans/beer{
+/obj/item/reagent_containers/drinks/bottle/beer{
 	pixel_x = -6;
 	pixel_y = 4
 	},
-/obj/item/reagent_containers/drinks/cans/beer{
+/obj/item/reagent_containers/drinks/bottle/beer{
 	pixel_y = 4;
 	pixel_x = 2
 	},
-/obj/item/reagent_containers/drinks/cans/beer{
+/obj/item/reagent_containers/drinks/bottle/beer{
 	pixel_x = 10;
 	pixel_y = 4
 	},
-/obj/item/reagent_containers/drinks/cans/beer{
+/obj/item/reagent_containers/drinks/bottle/beer{
 	pixel_x = -8
 	},
-/obj/item/reagent_containers/drinks/cans/beer,
-/obj/item/reagent_containers/drinks/cans/beer{
+/obj/item/reagent_containers/drinks/bottle/beer,
+/obj/item/reagent_containers/drinks/bottle/beer{
 	pixel_x = 8
 	},
 /turf/simulated/floor/plasteel/dark{
@@ -22072,9 +22082,8 @@
 	},
 /area/syndicate_mothership/cargo)
 "neJ" = (
-/obj/effect/spawner/random_spawners/syndicate/loot{
-	spawn_inside = null
-	},
+/obj/effect/spawner/random/syndicate/loot/common,
+/obj/structure/closet/secure_closet/depot,
 /turf/simulated/floor/plasteel{
 	dir = 10;
 	icon_state = "darkyellowalt"
@@ -22288,9 +22297,8 @@
 /turf/simulated/floor/wood/oak,
 /area/syndicate_mothership/control)
 "nlb" = (
-/obj/effect/spawner/random_spawners/syndicate/loot{
-	spawn_inside = null
-	},
+/obj/effect/spawner/random/syndicate/loot/common,
+/obj/structure/closet/secure_closet/depot,
 /turf/simulated/floor/plasteel{
 	icon_state = "dark"
 	},
@@ -22387,7 +22395,7 @@
 /turf/simulated/floor/indestructible/grass/no_creep,
 /area/centcom/ss220/general)
 "nox" = (
-/obj/machinery/newscaster/security_unit/north,
+/obj/machinery/newscaster/security_unit/directional/north,
 /obj/machinery/computer/crew/advanced,
 /turf/simulated/floor/carpet,
 /area/centcom/ss220/admin3)
@@ -22429,7 +22437,7 @@
 /area/centcom/ss220/admin1)
 "noT" = (
 /obj/structure/table/abductor,
-/obj/effect/spawner/random/CCfood/dessert,
+/obj/effect/spawner/random/ccfood/dessert,
 /obj/effect/turf_decal/siding/white{
 	dir = 6
 	},
@@ -22611,6 +22619,7 @@
 	},
 /obj/structure/table/reinforced,
 /obj/item/autopsy_scanner,
+/obj/item/reagent_containers/glass/bottle/reagent/formaldehyde,
 /obj/item/camera/autopsy{
 	pixel_y = 3;
 	pixel_x = 3
@@ -22971,9 +22980,8 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/delivery/white,
-/obj/effect/spawner/random_spawners/syndicate/loot{
-	spawn_inside = null
-	},
+/obj/effect/spawner/random/syndicate/loot/common,
+/obj/structure/closet/secure_closet/depot,
 /turf/simulated/floor/plasteel{
 	icon_state = "dark"
 	},
@@ -23384,9 +23392,8 @@
 /area/syndicate_mothership/outside)
 "nRS" = (
 /obj/effect/turf_decal/delivery/white,
-/obj/effect/spawner/random_spawners/syndicate/loot{
-	spawn_inside = null
-	},
+/obj/effect/spawner/random/syndicate/loot/common,
+/obj/structure/closet/secure_closet/depot,
 /turf/simulated/floor/plasteel{
 	icon_state = "dark"
 	},
@@ -23549,10 +23556,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/machinery/newscaster/security_unit{
-	name = "north bump";
-	pixel_y = 28
-	},
+/obj/machinery/newscaster/security_unit/directional/north,
 /turf/simulated/floor/wood/parquet/tile,
 /area/centcom/ss220/admin2)
 "nXD" = (
@@ -23569,7 +23573,7 @@
 	name = "Морг"
 	},
 /turf/simulated/floor/plasteel{
-	icon_state = "dark"
+	icon_state = "darkbluefull"
 	},
 /area/centcom/ss220/medbay)
 "nXL" = (
@@ -24530,9 +24534,8 @@
 "oEC" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/turf_decal/delivery/red,
-/obj/effect/spawner/random_spawners/syndicate/loot{
-	spawn_inside = null
-	},
+/obj/effect/spawner/random/syndicate/loot/common,
+/obj/structure/closet/secure_closet/depot,
 /turf/simulated/floor/plasteel{
 	icon_state = "dark"
 	},
@@ -25107,7 +25110,7 @@
 /area/centcom/ss220/admin2)
 "oWk" = (
 /obj/structure/table/glass/reinforced/plastitanium,
-/obj/effect/spawner/random/CCfood/meat,
+/obj/effect/spawner/random/ccfood/meat,
 /obj/structure/light_fake{
 	dir = 1
 	},
@@ -25194,9 +25197,8 @@
 /turf/simulated/floor/indestructible/grass,
 /area/syndicate_mothership/outside)
 "oYr" = (
-/obj/effect/spawner/random_spawners/syndicate/loot{
-	spawn_inside = null
-	},
+/obj/effect/spawner/random/syndicate/loot/common,
+/obj/structure/closet/secure_closet/depot,
 /obj/structure/closet/crate,
 /turf/simulated/floor/plasteel{
 	dir = 9;
@@ -25681,7 +25683,7 @@
 /area/centcom/ss220/park)
 "pql" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
-/obj/item/clothing/head/beret/solgov/command,
+/obj/item/clothing/head/beret/solgov,
 /obj/item/clothing/under/solgov/viper,
 /obj/item/clothing/shoes/combat/swat,
 /turf/simulated/floor/wood/fancy/cherry,
@@ -28019,7 +28021,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bed/dogbed,
-/mob/living/simple_animal/pet/dog/fox/Syndifox,
+/mob/living/simple_animal/pet/dog/fox/syndifox,
 /turf/simulated/floor/wood/oak,
 /area/syndicate_mothership)
 "qNB" = (
@@ -28389,11 +28391,11 @@
 /area/syndicate_mothership/elite_squad)
 "qZz" = (
 /obj/structure/table,
-/obj/item/stack/packageWrap,
-/obj/item/stack/packageWrap{
+/obj/item/stack/package_wrap,
+/obj/item/stack/package_wrap{
 	pixel_y = 3
 	},
-/obj/item/stack/packageWrap{
+/obj/item/stack/package_wrap{
 	pixel_y = 6
 	},
 /obj/effect/turf_decal/stripes/white,
@@ -28413,11 +28415,20 @@
 /turf/simulated/floor/mineral/plastitanium,
 /area/centcom/ss220/general)
 "qZQ" = (
-/obj/structure/crematorium{
+/obj/structure/morgue{
+	dir = 1
+	},
+/obj/structure/window/reinforced{
 	dir = 4
 	},
+/obj/machinery/door/window/reinforced/normal{
+	name = "Морг";
+	req_access = list(101);
+	dir = 1
+	},
 /turf/simulated/floor/plasteel{
-	icon_state = "darkbluefull"
+	dir = 10;
+	icon_state = "darkblue"
 	},
 /area/centcom/ss220/medbay)
 "qZS" = (
@@ -28429,13 +28440,9 @@
 	},
 /area/syndicate_mothership/jail)
 "qZV" = (
-/obj/structure/morgue,
-/obj/machinery/door/window/reinforced/normal{
-	name = "Морг";
-	req_access = list(101);
-	dir = 4
+/obj/structure/sign/poster/official/nanotrasen_logo{
+	pixel_x = -32
 	},
-/obj/structure/window/reinforced,
 /turf/simulated/floor/plasteel{
 	dir = 8;
 	icon_state = "darkblue"
@@ -28621,7 +28628,7 @@
 /area/syndicate_mothership/control)
 "rgd" = (
 /obj/structure/table/abductor,
-/obj/effect/spawner/random/CCfood/dessert,
+/obj/effect/spawner/random/ccfood/dessert,
 /obj/effect/turf_decal/siding/white{
 	dir = 9
 	},
@@ -28997,8 +29004,8 @@
 	},
 /area/syndicate_mothership/cargo)
 "rqA" = (
-/obj/effect/spawner/random/CCfood/alcohol,
-/obj/effect/spawner/random/CCfood/dessert,
+/obj/effect/spawner/random/ccfood/alcohol,
+/obj/effect/spawner/random/ccfood/dessert,
 /obj/structure/table/wood/fancy/blue,
 /turf/simulated/floor/carpet/royalblue,
 /area/centcom/ss220/bar)
@@ -29185,8 +29192,8 @@
 "rte" = (
 /obj/item/storage/firstaid/brute,
 /obj/item/storage/firstaid/brute,
-/obj/item/storage/firstaid/doctor,
-/obj/item/storage/firstaid/doctor,
+/obj/item/storage/firstaid/regular/doctor,
+/obj/item/storage/firstaid/regular/doctor,
 /obj/item/storage/firstaid/fire,
 /obj/item/storage/firstaid/fire,
 /obj/item/storage/firstaid/o2,
@@ -30738,7 +30745,6 @@
 /area/centcom/ss220/admin3)
 "sjW" = (
 /obj/machinery/optable,
-/obj/item/clothing/gloves/color/latex/nitrile,
 /obj/structure/light_fake/small{
 	dir = 1
 	},
@@ -32089,8 +32095,8 @@
 /turf/simulated/floor/indestructible/grass/no_creep,
 /area/centcom/ss220/admin1)
 "sZB" = (
-/obj/effect/spawner/random/CCfood/alcohol,
-/obj/effect/spawner/random/CCfood/dessert,
+/obj/effect/spawner/random/ccfood/alcohol,
+/obj/effect/spawner/random/ccfood/dessert,
 /obj/structure/table/wood/fancy/red,
 /turf/simulated/floor/carpet/red,
 /area/centcom/ss220/bar)
@@ -32414,7 +32420,7 @@
 /area/centcom/ss220/admin3)
 "tnw" = (
 /obj/structure/table/abductor,
-/obj/effect/spawner/random/CCfood/dessert,
+/obj/effect/spawner/random/ccfood/dessert,
 /obj/effect/turf_decal/siding/white{
 	dir = 5
 	},
@@ -32559,7 +32565,7 @@
 /obj/item/circular_saw,
 /obj/item/scalpel,
 /obj/item/retractor,
-/obj/item/FixOVein,
+/obj/item/fix_o_vein,
 /turf/simulated/floor/plasteel/dark{
 	icon_state = "barber"
 	},
@@ -33797,7 +33803,6 @@
 "udY" = (
 /obj/machinery/power/apc/directional/south,
 /obj/structure/cable{
-	d2 = 4;
 	icon_state = "0-4"
 	},
 /obj/structure/sign/securearea{
@@ -34138,9 +34143,8 @@
 /turf/simulated/floor/wood/parquet/tile,
 /area/centcom/ss220/admin2)
 "upU" = (
-/obj/effect/spawner/random_spawners/syndicate/loot{
-	spawn_inside = null
-	},
+/obj/effect/spawner/random/syndicate/loot/common,
+/obj/structure/closet/secure_closet/depot,
 /obj/structure/closet/crate,
 /turf/simulated/floor/plasteel{
 	dir = 5;
@@ -34199,7 +34203,6 @@
 /area/shuttle/escape)
 "urK" = (
 /obj/structure/cable{
-	d2 = 8;
 	icon_state = "0-8"
 	},
 /obj/machinery/computer/mech_bay_power_console{
@@ -34585,7 +34588,7 @@
 /area/shuttle/syndicate)
 "uGb" = (
 /obj/structure/table/abductor,
-/obj/effect/spawner/random/CCfood/meat,
+/obj/effect/spawner/random/ccfood/meat,
 /obj/effect/turf_decal/siding/white{
 	dir = 5
 	},
@@ -34613,12 +34616,12 @@
 /area/centcom/ss220/command)
 "uHD" = (
 /obj/structure/rack,
-/obj/item/storage/firstaid,
-/obj/item/storage/firstaid,
-/obj/item/storage/firstaid,
-/obj/item/storage/firstaid,
-/obj/item/storage/firstaid,
-/obj/item/storage/firstaid,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
 /obj/effect/turf_decal/delivery/white,
 /turf/simulated/floor/plasteel/dark,
 /area/centcom/ss220/supply)
@@ -36139,7 +36142,7 @@
 /obj/structure/sign/poster/contraband/random{
 	pixel_x = 30
 	},
-/obj/item/reagent_containers/drinks/cans/beer,
+/obj/item/reagent_containers/drinks/bottle/beer,
 /turf/simulated/floor/wood/oak,
 /area/syndicate_mothership)
 "vwI" = (
@@ -37085,7 +37088,7 @@
 /area/centcom/ss220/park)
 "wbm" = (
 /obj/structure/table/wood/fancy/black,
-/obj/effect/spawner/random/CCfood/alcohol,
+/obj/effect/spawner/random/ccfood/alcohol,
 /turf/simulated/floor/carpet/black,
 /area/centcom/ss220/bar)
 "wbu" = (
@@ -37938,9 +37941,8 @@
 	dir = 5
 	},
 /obj/effect/turf_decal/delivery/white,
-/obj/effect/spawner/random_spawners/syndicate/loot{
-	spawn_inside = null
-	},
+/obj/effect/spawner/random/syndicate/loot/common,
+/obj/structure/closet/secure_closet/depot,
 /turf/simulated/floor/plasteel{
 	icon_state = "dark"
 	},
@@ -38498,9 +38500,8 @@
 /area/centcom/ss220/admin1)
 "wLN" = (
 /obj/effect/turf_decal/delivery,
-/obj/effect/spawner/random_spawners/syndicate/loot{
-	spawn_inside = null
-	},
+/obj/effect/spawner/random/syndicate/loot/common,
+/obj/structure/closet/secure_closet/depot,
 /obj/structure/fans/tiny/invisible,
 /turf/simulated/floor/plasteel{
 	dir = 1;
@@ -38786,7 +38787,7 @@
 /area/centcom/ss220/general)
 "wTV" = (
 /obj/structure/table/abductor,
-/obj/effect/spawner/random/CCfood/meat,
+/obj/effect/spawner/random/ccfood/meat,
 /obj/effect/turf_decal/siding/white{
 	dir = 6
 	},
@@ -39154,7 +39155,7 @@
 /area/centcom/ss220/medbay)
 "xfp" = (
 /obj/structure/bed/dogbed,
-/mob/living/simple_animal/pet/cat/Syndi,
+/mob/living/simple_animal/pet/cat/syndi,
 /turf/simulated/floor/wood/oak,
 /area/syndicate_mothership)
 "xft" = (
@@ -39303,7 +39304,7 @@
 /area/shuttle/syndicate)
 "xjz" = (
 /obj/structure/table/wood/fancy/royalblue,
-/obj/effect/spawner/random/CCfood/meat,
+/obj/effect/spawner/random/ccfood/meat,
 /turf/simulated/floor/carpet/royalblack,
 /area/centcom/ss220/bar)
 "xjE" = (
@@ -40001,7 +40002,7 @@
 /area/centcom/ss220/bar)
 "xEu" = (
 /obj/structure/table/glass/reinforced/plastitanium,
-/obj/effect/spawner/random/CCfood/meat,
+/obj/effect/spawner/random/ccfood/meat,
 /turf/simulated/floor/carpet/royalblack,
 /area/centcom/ss220/bar)
 "xEG" = (
@@ -40119,11 +40120,11 @@
 /area/centcom/ss220/supply)
 "xIy" = (
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/iv_bag/blood/OMinus{
+/obj/item/reagent_containers/iv_bag/blood/o_minus{
 	pixel_x = -3
 	},
-/obj/item/reagent_containers/iv_bag/blood/OMinus,
-/obj/item/reagent_containers/iv_bag/blood/OMinus{
+/obj/item/reagent_containers/iv_bag/blood/o_minus,
+/obj/item/reagent_containers/iv_bag/blood/o_minus{
 	pixel_x = 3
 	},
 /obj/item/reagent_containers/iv_bag/salglu{
@@ -59992,7 +59993,7 @@ kUt
 uMr
 nuJ
 mAl
-vSF
+dKi
 nXF
 jUN
 vmB

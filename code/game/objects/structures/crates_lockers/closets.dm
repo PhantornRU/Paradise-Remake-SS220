@@ -13,6 +13,8 @@
 	var/opened_door_sprite
 	/// Overwrites icon_state for the closed door sprite. Only necessary if the closed door sprite has a different name than the icon_state.
 	var/closed_door_sprite
+	/// Added to initial(icon_state) if not null. Used for IC customization, e.g. when painting cardboard boxes.
+	var/custom_skin
 	var/opened = FALSE
 	var/welded = FALSE
 	var/locked = FALSE
@@ -42,7 +44,7 @@
 	var/door_hinge_x = -6.5
 	/// Amount of time it takes for the door animation to play
 	var/door_anim_time = 2.0 // set to 0 to make the door not animate at all
-	/// Whether this closet uses a door overlay at all. If FALSE, it'll switch to a system where the entire icon_state is replaced with [icon_state]_open instead.
+	/// Whether this closet uses a door overlay at all. If `FALSE`, it'll switch to a system where the entire icon_state is replaced with `[icon_state]_open` instead.
 	var/enable_door_overlay = TRUE
 	/// Whether this closet uses a door overlay for when it is opened
 	var/has_opened_overlay = TRUE
@@ -66,9 +68,9 @@
 	. = ..()
 	if(!enable_door_overlay)
 		if(opened)
-			icon_state = "[initial(icon_state)]_open"
+			icon_state = "[initial(icon_state)][custom_skin]_open"
 		else
-			icon_state = initial(icon_state)
+			icon_state = "[initial(icon_state)][custom_skin]"
 
 /obj/structure/closet/proc/closet_update_overlays(list/new_overlays)
 	. = new_overlays
@@ -165,7 +167,7 @@
 	QDEL_NULL(door_obj)
 	return ..()
 
-/obj/structure/closet/CanPass(atom/movable/mover, turf/target)
+/obj/structure/closet/CanPass(atom/movable/mover, border_dir)
 	if(wall_mounted)
 		return TRUE
 	return (!density)
@@ -278,7 +280,7 @@
 	if(!broken && !(flags & NODECONSTRUCT))
 		bust_open()
 
-/obj/structure/closet/attackby(obj/item/W, mob/user, params)
+/obj/structure/closet/attackby__legacy__attackchain(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/rcs) && !opened)
 		var/obj/item/rcs/E = W
 		E.try_send_container(user, src)
@@ -308,7 +310,7 @@
 			return TRUE // It's resolved. No afterattack needed. Stops you from emagging lockers when putting in an emag
 	else if(can_be_emaged && (istype(W, /obj/item/card/emag) || istype(W, /obj/item/melee/energy/blade) && !broken))
 		emag_act(user)
-	else if(istype(W, /obj/item/stack/packageWrap))
+	else if(istype(W, /obj/item/stack/package_wrap))
 		return
 	else if(user.a_intent != INTENT_HARM)
 		closed_item_click(user)
@@ -464,8 +466,8 @@
 			to_chat(usr, "<span class='warning'>You successfully break out!</span>")
 			for(var/mob/O in viewers(L.loc))
 				O.show_message("<span class='danger'>\the [usr] successfully broke out of \the [src]!</span>", 1)
-			if(istype(loc, /obj/structure/bigDelivery)) //nullspace ect.. read the comment above
-				var/obj/structure/bigDelivery/BD = loc
+			if(istype(loc, /obj/structure/big_delivery)) //nullspace ect.. read the comment above
+				var/obj/structure/big_delivery/BD = loc
 				BD.attack_hand(usr)
 			open()
 
@@ -514,24 +516,29 @@
 	storage_capacity = 60
 	var/materials = list(MAT_METAL = 5000, MAT_PLASMA = 2500, MAT_TITANIUM = 500, MAT_BLUESPACE = 500)
 
-/obj/structure/closet/bluespace/CheckExit(atom/movable/AM)
-	UpdateTransparency(AM, loc)
-	return TRUE
+/obj/structure/closet/bluespace/Initialize(mapload)
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = PROC_REF(UpdateTransparency),
+		COMSIG_ATOM_EXITED = PROC_REF(UpdateTransparency),
+	)
 
-/obj/structure/closet/bluespace/proc/UpdateTransparency(atom/movable/AM, atom/location)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+/obj/structure/closet/bluespace/proc/UpdateTransparency()
+	SIGNAL_HANDLER  // COMSIG_ATOM_ENTERED + COMSIG_ATOM_EXITED
 	transparent = FALSE
-	for(var/atom/A in location)
-		if(A.density && A != src && A != AM)
+	if(!get_turf(loc))
+		return
+
+	for(var/atom/A in loc)
+		if(A.density && A != src)
 			transparent = TRUE
 			alpha = 180
 			update_icon()
 			return
 	alpha = 255
 	update_icon()
-
-/obj/structure/closet/bluespace/Crossed(atom/movable/AM, oldloc)
-	if(AM.density)
-		UpdateTransparency(location = loc)
 
 /obj/structure/closet/bluespace/Move(NewLoc, direct) // Allows for "phasing" throug objects but doesn't allow you to stuff your EOC homebois in one of these and push them through walls.
 	var/turf/T = get_turf(NewLoc)
@@ -540,8 +547,10 @@
 	for(var/atom/A in T.contents)
 		if(A.density && isairlock(A))
 			return
-	UpdateTransparency(src, NewLoc)
-	forceMove(NewLoc)
+
+	. = ..()
+
+	UpdateTransparency()
 
 /obj/structure/closet/bluespace/close()
 	. = ..()

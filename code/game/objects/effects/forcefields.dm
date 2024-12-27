@@ -22,7 +22,7 @@
 	. = ..()
 	wizard = summoner
 
-/obj/effect/forcefield/wizard/CanPass(atom/movable/mover, turf/target)
+/obj/effect/forcefield/wizard/CanPass(atom/movable/mover, border_dir)
 	if(mover == wizard)
 		return TRUE
 	return FALSE
@@ -59,8 +59,8 @@
 	desc = "You have a bad feeling about this."
 	max_integrity = 80
 
-/obj/effect/forcefield/mime/advanced
-	icon_state = "empty"
+/obj/effect/forcefield/mime
+	icon_state = null
 	name = "invisible blockade"
 	desc = "You might be here a while."
 	lifetime = 60 SECONDS
